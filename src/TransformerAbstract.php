@@ -160,7 +160,7 @@ abstract class TransformerAbstract
         $params = $scope->getManager()->getIncludeParams($scopeIdentifier);
 
         // Check if the method name actually exists
-        $methodName = 'include'.str_replace(' ', '', ucwords(str_replace('_', ' ', $includeName)));
+        $methodName = 'include' . str_replace(' ', '', ucwords(str_replace(array('_', '-'), ' ', $includeName)));
 
         $resource = call_user_func(array($this, $methodName), $data, $params);
 
